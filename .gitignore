@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+
+# NestJS
+dist/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Editor directories and files
+.vscode/
+*.code-workspace
+
+# Test reports
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
