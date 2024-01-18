@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "6e4b2c5d-c557-4604-8888-aa5b5432fadc",
+		"name": "NestJs Chat Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11097539"
+	},
+	"item": [
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "Create Chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"group\",\n    \"title\": \"Grup Keluarga\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/chats",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User Chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat_id\":\"65547105887bd04714a973b2\",\n    \"user_id\": \"65546a056fc19d7b0e0fb2f3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/user-chats",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"user-chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat_id\":\"65546413882554da4f434d16\",\n    \"sender_id\": \"65546a056fc19d7b0e0fb2f3\",\n    \"content\": \"Hello, Zain!!!\"\n}    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/messages",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/chats",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chat Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/chats/65546413882554da4f434d16",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"chats",
+								"65546413882554da4f434d16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Chat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/chats/655472b4166608d475b78c6f",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"chats",
+								"655472b4166608d475b78c6f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Chat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CHAT_SERVICE_URL}}/user-chats/6554640a2acb201a86e1ca97",
+							"host": [
+								"{{CHAT_SERVICE_URL}}"
+							],
+							"path": [
+								"user-chats",
+								"6554640a2acb201a86e1ca97"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Authorized User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AUTH_SERVICE_URL}}/users",
+							"host": [
+								"{{AUTH_SERVICE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"placeId\": \"12345\",\n    \"invoiceId\":\"493\",\n    \"startDate\":\"12/20/2022\",\n    \"endDate\":\"12/25/2022\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AUTH_SERVICE_URL}}/auth/login",
+							"host": [
+								"{{AUTH_SERVICE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Dimas Bagus Susilo\",\n    \"email\": \"dimasbagussusilo@gmail.com\",\n    \"password\":\"Password123!!!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AUTH_SERVICE_URL}}/users",
+							"host": [
+								"{{AUTH_SERVICE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CHAT_SERVICE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "AUTH_SERVICE_URL",
+			"value": "http://localhost:3001",
+			"type": "string"
+		}
+	]
+}
